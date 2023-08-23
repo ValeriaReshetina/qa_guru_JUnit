@@ -18,9 +18,9 @@ public class MethodSourceTest extends TestBase {
 
     static Stream<Arguments> steamLocaleTest() {
         return Stream.of(
-                Arguments.of(Locale.English, List.of("STORE", "COMMUNITY", "ABOUT", "SUPPORT")),
-                Arguments.of(Locale.Русский, List.of("МАГАЗИН", "СООБЩЕСТВО", "ИНФОРМАЦИЯ", "ПОДДЕРЖКА")),
-                Arguments.of(Locale.Deutsch, List.of("SHOP", "COMMUNITY", "INFO", "SUPPORT"))
+                Arguments.of(Locale.ENGLISH, List.of("STORE", "COMMUNITY", "ABOUT", "SUPPORT")),
+                Arguments.of(Locale.РУССКИЙ, List.of("МАГАЗИН", "СООБЩЕСТВО", "ИНФОРМАЦИЯ", "ПОДДЕРЖКА")),
+                Arguments.of(Locale.DEUTSCH, List.of("SHOP", "COMMUNITY", "INFO", "SUPPORT"))
         );
     }
 
@@ -30,7 +30,7 @@ public class MethodSourceTest extends TestBase {
     public void steamLocaleTest(Locale locale, List<String> expectedButtons) {
         open("https://store.steampowered.com/");
         $x("//*[@id='language_pulldown']").click();
-        $$x("//a[@class='popup_menu_item tight']").find(text(locale.name())).click();
+        $$x("//a[@class='popup_menu_item tight']").find(text(locale.getLanguage())).click();
         $$x("//div[@class='supernav_container']//a")
                 .filter(visible).should(CollectionCondition.texts(expectedButtons));
     }
