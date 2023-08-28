@@ -12,7 +12,7 @@ public class ValueSourceTest extends TestBase {
 
     @ValueSource(strings = {"CHAYA - BLISS TURQUOISE",   "MOXI - BEACH BUNNY PERIWINKLE"})
     @DisplayName("Test with using a ValueSource data provider as a homework for lesson #9")
-    @ParameterizedTest(name = "В результате поиска отображен {1} по тексту запроса {0}")
+    @ParameterizedTest(name = "При поиске по параметру {0} отображается карточка роликов-квадов")
     public void searchOfNewRollersWithValueSource(String value) {
         open("https://kvady.ru/");
         $x("//span[contains(text(),'Перейти в каталог')]").click();

@@ -2,7 +2,7 @@ package guru.qa.data;
 
 public enum Locale {
     ENGLISH ("English"),
-    РУССКИЙ ("Русский"),
+    RUSSIAN ("Russian"),
     DEUTSCH ("Deutsch");
 
     private final String language;

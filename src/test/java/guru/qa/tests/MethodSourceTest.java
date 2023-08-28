@@ -19,7 +19,7 @@ public class MethodSourceTest extends TestBase {
     static Stream<Arguments> steamLocaleTest() {
         return Stream.of(
                 Arguments.of(Locale.ENGLISH, List.of("STORE", "COMMUNITY", "ABOUT", "SUPPORT")),
-                Arguments.of(Locale.РУССКИЙ, List.of("МАГАЗИН", "СООБЩЕСТВО", "ИНФОРМАЦИЯ", "ПОДДЕРЖКА")),
+                Arguments.of(Locale.RUSSIAN, List.of("МАГАЗИН", "СООБЩЕСТВО", "ИНФОРМАЦИЯ", "ПОДДЕРЖКА")),
                 Arguments.of(Locale.DEUTSCH, List.of("SHOP", "COMMUNITY", "INFO", "SUPPORT"))
         );
     }
